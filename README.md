@@ -5,9 +5,11 @@
 <?php $terms = get_the_terms( $post->ID, '$taxonmy' );
   if ($terms && ! is_wp_error($terms)): ?>
   <?php foreach($terms as $term): ?>
+    <a href="<?php echo get_term_link( $term->slug, 'item-cat'); ?>">
     <?php echo $term->name; break; ?>
+		</a>
   <?php endforeach; ?>
-<?php endif; ?>
+<?php endif; ?>		
 ```
 
 #### sigle.phpとかで同じtermの記事表示させるとか（term ID取得1個だけ ）
