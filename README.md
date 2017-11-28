@@ -11,18 +11,19 @@
 ```
 
 ### sigle.phpとかで同じtermの記事表示させるとか（term ID取得1個だけ ）
+```
 <?php $terms = get_the_terms( $post->ID, '$taxonmy' );?>
 //term取得
 
 <?php
 	if( $terms ) {
 		foreach($terms as $term){
-			echo '<a href="' . get_term_link( $term->slug, 'workscat') . '">' . $term->name . '</a>';
+			echo '<a href="' . get_term_link( $term->slug, '$taxonmy') . '">' . $term->name . '</a>';
 			break;
 		}
 	}
 ?>
-//term取得
+//termの名前とリンクを取得
 
 <?php
   $relation_terms = get_the_terms($post->ID, '$taxonmy' );
@@ -34,3 +35,4 @@
       }
     }
 ?>
+```
