@@ -1,0 +1,2 @@
+# Wordpress_exprot__term
+Wordpressのtermとかtaxonomyとかの出力関連
