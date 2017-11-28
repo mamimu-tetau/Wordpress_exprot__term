@@ -1,6 +1,6 @@
 ## Wordpressのtermとかtaxonomyとかの出力関連
 
-### Archive.phpなどでterm取得（1個だけ）
+#### archive.phpなどでterm取得（1個だけ）
 ```
 <?php $terms = get_the_terms( $post->ID, '$taxonmy' );
   if ($terms && ! is_wp_error($terms)): ?>
@@ -10,7 +10,7 @@
 <?php endif; ?>
 ```
 
-### sigle.phpとかで同じtermの記事表示させるとか（term ID取得1個だけ ）
+#### sigle.phpとかで同じtermの記事表示させるとか（term ID取得1個だけ ）
 ```
 <?php $terms = get_the_terms( $post->ID, '$taxonmy' );?>
 //term取得
