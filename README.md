@@ -2,12 +2,15 @@
 
 #### archive.phpなどでterm取得（1個だけ）
 ```
-<?php $terms = get_the_terms( $post->ID, '$taxonmy' );
-	if ($terms && ! is_wp_error($terms)): ?>
-	<?php foreach($terms as $term): ?>
-		<a href="<?php echo get_term_link( $term->slug, 'item-cat'); ?>"><?php echo $term->name; break; ?></a>
-	<?php endforeach; ?>
-<?php endif; ?>
+<?php
+$terms = get_the_terms( $post->ID, '$taxonomy' );
+	if ($terms && ! is_wp_error($terms)) {
+		foreach($terms as $term):
+			echo '<span>' . esc_attr( $term->name ) . '</span>';
+			break;
+		endforeach;
+	}
+?>
 ```
 
 #### sigle.phpとかで同じtermの記事表示させるとか（term ID取得1個だけ ）
