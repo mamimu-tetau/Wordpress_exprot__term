@@ -39,3 +39,15 @@ $terms = get_the_terms( $post->ID, '$taxonomy' );
 	}
 ?>
 ```
+
+#### foreach文のエラー
+##### Warning: Invalid argument supplied for foreach() …
+```
+<?php
+$term =  get_the_terms( $post ->ID, 'term名' );
+foreach ((array) $terms as $term) {
+　　$termname = $term -> name;
+        $termslug = $term -> slug;
+    } 
+} ?> 
+```
