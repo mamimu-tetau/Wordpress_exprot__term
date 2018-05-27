@@ -51,3 +51,14 @@ foreach ((array) $terms as $term) {
     } 
 } ?> 
 ```
+
+
+#### foreach文のエラー
+##### 桁数でうまくソートできない？ カスタムフィールドを数字として評価するには「meta_value_num」を利用
+```
+$results = get_posts(array(
+  'orderby' => 'meta_value_num',
+  'meta_key' => 'price',
+  'order' => 'asc'
+)); 
+```
